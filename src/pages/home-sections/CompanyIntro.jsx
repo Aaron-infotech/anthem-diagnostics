@@ -71,29 +71,29 @@ export default function CompanyIntro() {
             <div className="absolute inset-0 pointer-events-none">
               <svg viewBox="0 0 500 500" className="w-full h-full">
 
-                {/* 1. Outer Blue Arc Lines (Rotating Clockwise) */}
+                {/* 1. Outer Orange Arc Lines (Rotating Clockwise) */}
                 <g className="origin-center animate-[spin_26s_linear_infinite]">
                   {/* Left Symmetrical Outer Arc */}
                   <path
                     d="M 112 86 A 215 215 0 0 0 86 388"
                     fill="none"
-                    stroke="#3b82f6"
-                    strokeWidth="2"
+                    stroke="#F26522"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                   />
                   {/* Right Symmetrical Outer Arc */}
                   <path
                     d="M 414 112 A 215 215 0 0 1 414 388"
                     fill="none"
-                    stroke="#3b82f6"
-                    strokeWidth="2"
+                    stroke="#F26522"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                   />
                   {/* Top Inner Accent Arc */}
                   <path
                     d="M 150 75 A 185 185 0 0 1 350 75"
                     fill="none"
-                    stroke="#93c5fd"
+                    stroke="#FF7D42"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                   />

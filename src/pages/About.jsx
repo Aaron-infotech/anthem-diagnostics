@@ -111,7 +111,7 @@ export default function About() {
           </div>
           <div className="mobileGrid mt-12 grid gap-6 grid-cols-2 sm:grid-cols-4">
             <Counter value={3} suffix="+" label="Years of Experience" />
-            <Counter value={30} suffix="+" label="Products Sales" />
+            <Counter value={40} suffix="+" label="Cities" />
             <Counter value={100} suffix="+" label="Clients" />
             <Counter value={30} suffix="+" label="Employees" />
           </div>
