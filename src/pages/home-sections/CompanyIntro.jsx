@@ -202,7 +202,7 @@ export default function CompanyIntro() {
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {points.map((point) => (
               <li key={point} className="flex items-start gap-2.5 text-sm text-ink/75">
-                <FiCheckCircle className="mt-0.5 shrink-0 text-primary" size={18} />
+                <FiCheckCircle className="mt-0.5 shrink-0 text-brandOrange" size={18} />
                 <span>{point}</span>
               </li>
             ))}
