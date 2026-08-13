@@ -28,7 +28,7 @@ export default function ProductCategories() {
                 <p className="mt-2 text-sm text-ink/65">{cat.tagline}</p>
                 <Link
                   to={`/products?category=${cat.slug}`}
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary-dark"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brandOrange transition-colors hover:text-brandOrange-dark"
                 >
                   View Products <FiArrowRight size={15} />
                 </Link>
