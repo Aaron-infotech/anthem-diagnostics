@@ -1,0 +1,18 @@
+export const partners = [
+  { name: 'Partner 1', logo: '/logo/Picture1.jpg' },
+  { name: 'Partner 2', logo: '/logo/Picture2.jpg' },
+  { name: 'Partner 3', logo: '/logo/Picture3.jpg' },
+  { name: 'Partner 5', logo: '/logo/Picture5.png' },
+  { name: 'Partner 6', logo: '/logo/Picture6.jpg' },
+  { name: 'Partner 7', logo: '/logo/Picture7.jpg' },
+  { name: 'Partner 8', logo: '/logo/Picture8.png' },
+  { name: 'Partner 9', logo: '/logo/Picture9.jpg' },
+  { name: 'Partner 10', logo: '/logo/Picture10.png' },
+  { name: 'Partner 11', logo: '/logo/Picture11.png' },
+  { name: 'Partner 12', logo: '/logo/Picture12.png' },
+  { name: 'Partner 13', logo: '/logo/Picture13.png' },
+  { name: 'Partner 14', logo: '/logo/Picture14.jpg' },
+  { name: 'Partner 15', logo: '/logo/Picture15.png' },
+  { name: 'Partner 16', logo: '/logo/Picture16.jpg' },
+  { name: 'Partner 17', logo: '/logo/Picture17.png' },
+]

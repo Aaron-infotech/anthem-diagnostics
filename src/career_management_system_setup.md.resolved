@@ -1,0 +1,76 @@
+# 🚀 Career Management System (React + Google Apps Script + Google Sheets + Google Drive)
+
+A modern, serverless **Career Management System** built with **React JS**, **Google Apps Script API**, **Google Sheets** for data storage, and **Google Drive** for resume storage. 
+
+> [!TIP]
+> **No PHP server or MySQL database required!** 100% free, reliable, and maintenance-free infrastructure powered by Google Workspace.
+
+---
+
+## 🏗️ Architecture Overview
+
+```mermaid
+graph LR
+    User[React Candidate Form] -->|Base64 Resume + Form Data| GAS[Google Apps Script Web App]
+    GAS -->|Store Resume PDF/DOCX| Drive[Google Drive Folder]
+    GAS -->|Append Candidate Record| Sheet[Google Sheets Database]
+    Drive -->|Generates View URL| GAS
+    GAS -->|Returns Application ID| User
+```
+
+---
+
+## 📁 Files Created in Codebase
+
+1. **`gas/Code.gs`**: The Google Apps Script backend script.
+2. **`src/services/googleCareerService.js`**: React service for Base64 encoding and API submission.
+3. **`src/components/Career/ApplicationModal.jsx`**: Frontend candidate application modal with resume uploader.
+
+---
+
+## ⚙️ Step-by-Step Setup Guide (2 Minutes)
+
+### Step 1: Open Google Apps Script
+1. Go to [script.google.com](https://script.google.com) and click **+ New project**.
+2. Rename the project to **`Anthem Career System API`**.
+
+### Step 2: Paste the Backend Code
+1. Open [gas/Code.gs](file:///c:/Users/aaron/OneDrive/Desktop/Anthem/anthem%202nd%20project/anthem-diagnostics/gas/Code.gs).
+2. Copy the entire script and paste it into the Google Apps Script code editor.
+3. Click the **Save** icon (💾 or `Ctrl + S`).
+
+### Step 3: Deploy as Web App
+1. In the top right corner, click **Deploy** ➔ **New deployment**.
+2. Click the gear icon (⚙️) next to *Select type* and select **Web app**.
+3. Fill in the deployment details:
+   - **Description**: `Career System API v1`
+   - **Execute as**: **`Me (your_email@gmail.com)`**
+   - **Who has access**: **`Anyone`** *(Crucial for public form submissions)*
+4. Click **Deploy**.
+5. Grant the required permissions (Authorize access to Google Drive and Google Sheets when prompted).
+6. Copy the generated **Web App URL** (starts with `https://script.google.com/macros/s/.../exec`).
+
+### Step 4: Connect Web App URL to React
+In your React application root directory, open or create your `.env` file and set:
+
+```env
+VITE_GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec
+```
+
+*(Alternatively, paste the URL directly into `src/services/googleCareerService.js`)*
+
+---
+
+## 📊 Automatic Database Creation
+
+Upon receiving the first job application:
+- **Google Sheets**: Automatically creates a spreadsheet named **`Anthem Job Applications`** with formatted column headers:
+  - `Application ID`, `Submitted At`, `Full Name`, `Email Address`, `Phone Number`, `Job Title`, `Department`, `Preferred Location`, `Resume File Name`, `Google Drive Resume Link`, `Message`, `Status`.
+- **Google Drive**: Automatically creates a folder named **`Anthem Job Resumes`** and sets sharing permissions so recruiters can view resumes directly via clickable links.
+
+---
+
+## 🔒 Security & Reliability Features
+
+- **No-CORS & Fail-Safe Architecture**: If the Google Apps Script URL is missing or unreachable, the system automatically saves a backup copy to local storage (`applicationsStorage.js`), ensuring zero data loss.
+- **Direct Base64 Upload**: Converts PDFs and DOCX files client-side before sending to Google Apps Script.
