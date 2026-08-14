@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import HeroSlider from '../components/HeroSlider/HeroSlider'
 import CompanyIntro from './home-sections/CompanyIntro'
+import ServicesSection from './home-sections/ServicesSection'
 import WhyChooseUs from './home-sections/WhyChooseUs'
 import PartnersSection from './home-sections/PartnersSection'
 import ProductCategories from './home-sections/ProductCategories'
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <HeroSlider />
       <CompanyIntro />
+      <ServicesSection />
       <WhyChooseUs />
       <CorporateClients />
       <ProductCategories />
